@@ -646,10 +646,15 @@
       document.getElementById('modal-badge').innerText = item.number ? `#${String(item.number).padStart(2, '0')}` : 'VAULT CONCEPT';
       document.getElementById('modal-art').src = item.cover_image || 'assets/covers/album-01.jpg';
       
-      const rawDesc = item.description || item.pitch || '';
-      const paragraphs = rawDesc.split(/\n\s*\n/).filter(Boolean);
-      if (paragraphs.length > 1) {
-        document.getElementById('modal-desc').innerHTML = paragraphs.map(p => `<p class="leading-relaxed">${p.trim()}</p>`).join('');
+      let paragraphs = rawDesc.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+      if (paragraphs.length <= 1 && rawDesc.includes('\n')) {
+        const lines = rawDesc.split(/\n+/).map(p => p.trim()).filter(Boolean);
+        if (lines.length > 1) {
+          paragraphs = lines;
+        }
+      }
+      if (paragraphs.length > 0) {
+        document.getElementById('modal-desc').innerHTML = paragraphs.map(p => `<p class="leading-relaxed">${p}</p>`).join('');
       } else {
         document.getElementById('modal-desc').innerText = rawDesc;
       }
