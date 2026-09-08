@@ -268,7 +268,7 @@
           <div class="flex-1 space-y-4">
             <div>
               <div class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold" id="modal-genre">Genre</div>
-              <p id="modal-desc" class="text-stone-300 text-sm leading-relaxed mt-2"></p>
+              <div id="modal-desc" class="text-stone-300 text-sm leading-relaxed mt-2 space-y-3"></div>
             </div>
 
             <!-- Companion Novella Callout -->
@@ -645,7 +645,15 @@
       document.getElementById('modal-title').innerText = item.title;
       document.getElementById('modal-badge').innerText = item.number ? `#${String(item.number).padStart(2, '0')}` : 'VAULT CONCEPT';
       document.getElementById('modal-art').src = item.cover_image || 'assets/covers/album-01.jpg';
-      document.getElementById('modal-desc').innerText = item.description || item.pitch || '';
+      
+      const rawDesc = item.description || item.pitch || '';
+      const paragraphs = rawDesc.split(/\n\s*\n/).filter(Boolean);
+      if (paragraphs.length > 1) {
+        document.getElementById('modal-desc').innerHTML = paragraphs.map(p => `<p class="leading-relaxed">${p.trim()}</p>`).join('');
+      } else {
+        document.getElementById('modal-desc').innerText = rawDesc;
+      }
+      
       document.getElementById('modal-genre').innerText = item.genre || 'Concept Folk';
       document.getElementById('modal-track-count').innerText = `${item.track_count || item.tracks?.length || 0} tracks`;
 

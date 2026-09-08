@@ -1338,8 +1338,9 @@
         "Civic Renewal"
       ],
       "genre": "Epic Political Folk",
-      "pitch": "The voice of the unrepresented majority who fall through the cracks of partisan dogma.",
-      "cover_image": "assets/covers/vault/the-republic-of-nobody.jpeg"
+      "pitch": "The Republic of Nobody examines the central paradox of modern American life: we remain a constitutional republic with regular elections and formal ballot equality, yet millions of citizens reasonably wonder where their voice has gone in the halls of power. Grounded in political-science research examining 1,779 policy outcomes, the album traces how concentrated wealth, organized lobbying, and hyper-polarization have severed citizen preference from policy—asking how democratic a society can truly be when citizens have equal votes but radically unequal political capacity. Ultimately, it delivers a powerful populist message: democratic power cannot be recovered by waiting on a savior, but only by ordinary people learning to organize together.",
+      "cover_image": "assets/covers/vault/the-republic-of-nobody.jpeg",
+      "subtitle": "Album Blueprint & Creative Foundation"
     },
     {
       "id": "the-unspoken-sermon",
