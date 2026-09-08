@@ -547,9 +547,16 @@
         <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group">
           <div>
             <!-- Image Frame -->
-            <div class="relative aspect-square overflow-hidden bg-soil-950">
+            <div onclick="openModal('${item.id}')" class="relative aspect-square overflow-hidden bg-soil-950 cursor-pointer" role="button" aria-label="Explore ${item.title}">
               <img src="${cover}" alt="${item.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
-              <div class="absolute inset-0 bg-gradient-to-t from-soil-900 via-transparent to-transparent opacity-80"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-soil-900 via-transparent to-transparent opacity-80 group-hover:opacity-50 transition-opacity"></div>
+              
+              <!-- Center Hover Icon -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <span class="p-3 rounded-full bg-soil-900/80 backdrop-blur-md text-brand-400 border border-brand-500/40 shadow-xl transform scale-90 group-hover:scale-100 transition-transform">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                </span>
+              </div>
               
               <!-- Badges -->
               <div class="absolute top-3 left-3 flex items-center gap-2">
@@ -578,7 +585,7 @@
               <div class="text-[11px] font-mono text-brand-400 uppercase tracking-wider mb-1">
                 ${item.genre || 'Concept Folk'}
               </div>
-              <h3 class="text-lg font-serif font-bold text-stone-100 group-hover:text-brand-400 transition-colors leading-snug mb-2">
+              <h3 onclick="openModal('${item.id}')" class="text-lg font-serif font-bold text-stone-100 group-hover:text-brand-400 transition-colors leading-snug mb-2 cursor-pointer">
                 ${item.title}
               </h3>
               <p class="text-xs text-stone-400 leading-relaxed mb-4">
