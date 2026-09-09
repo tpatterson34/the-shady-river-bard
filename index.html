@@ -364,10 +364,16 @@
               <span class="text-[11px] font-mono uppercase tracking-wider text-stone-300 block font-semibold">Stream Album</span>
               
               <!-- Primary Streamers -->
-              <a id="modal-yt-btn" href="#" target="_blank" aria-label="Listen on YouTube Music (opens in new tab)" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-medium text-xs transition-colors shadow focus-visible:ring-2 focus-visible:ring-white">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Listen on YouTube Music
-              </a>
+              <div class="grid grid-cols-2 gap-2 text-center text-xs">
+                <a id="modal-yt-btn" href="#" target="_blank" aria-label="Listen on YouTube (opens in new tab)" class="py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-medium transition-colors flex items-center justify-center gap-1.5 shadow focus-visible:ring-2 focus-visible:ring-white">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  YouTube
+                </a>
+                <a id="modal-ytm-btn" href="#" target="_blank" aria-label="Listen on YouTube Music (opens in new tab)" class="py-2.5 px-3 rounded-xl bg-red-700 hover:bg-red-600 text-white font-medium transition-colors flex items-center justify-center gap-1.5 shadow focus-visible:ring-2 focus-visible:ring-white">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5zm0-5.5c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>
+                  YouTube Music
+                </a>
+              </div>
 
               <a id="modal-apple-btn" href="#" target="_blank" aria-label="Listen on Apple Music (opens in new tab)" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-medium text-xs transition-colors shadow focus-visible:ring-2 focus-visible:ring-white">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-.9.04-2 .6-2.63 1.34-.56.64-.99 1.69-.87 2.73 1.01.08 1.99-.48 2.58-1.2"/></svg>
@@ -601,8 +607,8 @@
 
     async function init() {
       try {
-        if (window.BARD_CATALOG) {
-          catalog = window.BARD_CATALOG;
+        if (window.BARD_CATALOG || window.DISCOGRAPHY_DATA) {
+          catalog = window.BARD_CATALOG || window.DISCOGRAPHY_DATA;
         } else {
           const res = await fetch('data/albums.json');
           catalog = await res.json();
@@ -908,9 +914,11 @@
 
         const queryStr = encodeURIComponent("The Shady River Bard " + item.title);
 
-        // 1. YouTube Music (direct album playlist URL)
+        // 1. YouTube & YouTube Music (direct album playlist URLs)
         const ytBtn = document.getElementById('modal-yt-btn');
-        ytBtn.href = item.youtube_url || `https://music.youtube.com/search?q=${queryStr}`;
+        if (ytBtn) ytBtn.href = item.youtube_url || `https://www.youtube.com/results?search_query=${queryStr}`;
+        const ytmBtn = document.getElementById('modal-ytm-btn');
+        if (ytmBtn) ytmBtn.href = item.youtube_music_url || `https://music.youtube.com/search?q=${queryStr}`;
 
         // 2. Apple Music (direct album URL if known, else artist profile / search)
         const appleBtn = document.getElementById('modal-apple-btn');
@@ -976,19 +984,29 @@
       // Tracklist
       const tracklistEl = document.getElementById('modal-tracklist');
       if (item.tracks && item.tracks.length > 0) {
-        tracklistEl.innerHTML = item.tracks.map((tr, idx) => `
+        tracklistEl.innerHTML = item.tracks.map((tr, idx) => {
+          let trackUrl = '';
+          if (isReleased) {
+            if (item.track_videos && item.track_videos[idx]) {
+              trackUrl = `https://www.youtube.com/watch?v=${item.track_videos[idx]}`;
+            } else if (item.youtube_url) {
+              trackUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent("The Shady River Bard " + tr)}`;
+            }
+          }
+          return `
           <li class="flex items-center justify-between p-2.5 rounded-lg bg-soil-900/60 hover:bg-soil-800 transition-colors border border-white/5">
             <div class="flex items-center gap-3">
               <span class="font-mono text-xs text-brand-500 w-5">${String(idx + 1).padStart(2, '0')}</span>
               <span class="font-medium text-stone-200">${tr}</span>
             </div>
-            ${(isReleased && item.youtube_url) ? `
-              <a href="${item.youtube_url}" target="_blank" aria-label="Listen to ${tr} on YouTube" class="text-xs text-stone-400 hover:text-brand-400 flex items-center gap-1 focus-visible:ring-1 focus-visible:ring-brand-500 rounded">
+            ${trackUrl ? `
+              <a href="${trackUrl}" target="_blank" rel="noopener noreferrer" aria-label="Listen to ${tr} on YouTube" class="text-xs text-stone-400 hover:text-brand-400 flex items-center gap-1 focus-visible:ring-1 focus-visible:ring-brand-500 rounded px-1.5 py-0.5 transition-colors">
                 Listen ↗
               </a>
             ` : ''}
           </li>
-        `).join('');
+        `;
+        }).join('');
       } else {
         tracklistEl.innerHTML = `<li class="text-xs text-stone-400 italic py-2">Track titles and lyrics are currently being finalized in the workshop.</li>`;
       }
