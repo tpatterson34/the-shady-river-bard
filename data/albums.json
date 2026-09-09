@@ -1,7 +1,7 @@
 {
   "summary": {
     "total_released": 26,
-    "total_vault": 20,
+    "total_vault": 19,
     "apple_music_artist_url": "https://music.apple.com/us/artist/the-shady-river-bard/1829561760",
     "youtube_channel_url": "https://www.youtube.com/@TheShadyRiverBard",
     "facebook_url": "https://www.facebook.com/profile.php?id=61578707414516",
@@ -1385,21 +1385,6 @@
       "description": "1. The Bardic Mandate: Navigating the Epistemic Crisis\n\nThe trajectory of The Shady River Bard has always been one of unflinching observation. Where previous entries in the Bardic Multiverse explored the topography of personal sorrow or the abstract existential dread of the modern condition, the upcoming double album, THAT AIN'T SO, demands a radical shift in scope. We are moving from the interior to the exterior, from the poetic interpretation of feelings to the rigorous interrogation of facts. The artist is no longer merely a chronicler of the human heart but is tasked here with becoming an archivist of reality in an era defined by epistemic closure.\n\nThe title THAT AIN'T SO serves as the project's philosophical anchor. It is a colloquial rejection of the \"Truthiness\" that has come to dominate American discourse—a rejection of narratives that feel good but fail to align with empirical reality. The current political landscape is characterized not by a disagreement on values, but by a fundamental schism in shared reality. On the Right, we observe a retreat into economic mythologies that have been statistically debunked for decades, alongside a nostalgic reconstruction of a past that never existed. On the Left, we see a mirror image: a denial of biological and economic constraints, a rejection of scientific consensus when it conflicts with environmentalist dogma, and a retreat into a \"safetyism\" that creates fragility rather than resilience.\n\nThis document serves as the comprehensive creative bible for the project. It integrates over 170 distinct vectors of research—ranging from IMF economic studies to Bureau of Labor Statistics fatality reports—to construct a lyrical and sonic universe that is unassailable in its accuracy. The goal is to produce a work of art that functions as a corrective mechanism. The Shady River Bard must utilize their established sonic identity—the mournful cello, the abrasive folk-punk guitar, the industrial hum of modern anxiety—to seduce the listener into confronting the very data they have been conditioned to ignore. This is not centrism; it is objectivism weaponized through melody."
     },
     {
-      "id": "the-curtains-and-the-canned-goods",
-      "title": "The Curtains and the Canned Goods",
-      "status": "vault",
-      "folder_name": "XX - The Curtains and the Canned Goods",
-      "track_count": 0,
-      "tracks": [],
-      "art_files_count": 0,
-      "art_sample": null,
-      "themes": [
-        "Unreleased Concept"
-      ],
-      "genre": "Concept Exploration",
-      "pitch": "An unreleased concept album from The Shady River Bard workshop."
-    },
-    {
       "id": "the-farmer-s-broken-back",
       "title": "The Farmer's Broken Back",
       "status": "vault",
@@ -1480,7 +1465,7 @@
     },
     {
       "id": "the-gardener-s-rebellion",
-      "title": "The Gardener’s Rebellion",
+      "title": "The Gardener's Rebellion",
       "status": "vault",
       "folder_name": "XX - The Gardener’s Rebellion",
       "track_count": 12,
