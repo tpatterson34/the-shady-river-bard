@@ -631,9 +631,15 @@
             ` : `
               <div class="flex items-center gap-2">
                 ${item.is_bespoke ? `
-                  <a href="${item.custom_url}" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-medium transition-colors flex items-center justify-center gap-1.5">
-                    Launch Interactive Explorer →
+                  <button onclick="openModal('${item.id}')" class="py-2 px-3 rounded-xl bg-soil-800 hover:bg-soil-700 text-stone-300 text-xs font-medium transition-colors border border-white/5">
+                    Inspect
+                  </button>
+                  <a href="${item.custom_url}" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-medium transition-colors flex items-center justify-center gap-1.5 shadow">
+                    Interactive App →
                   </a>
+                  <button onclick="openVoteModal('${item.id}')" class="py-2 px-3 rounded-xl ${voted ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-amber-600 hover:bg-amber-500 text-white'} text-xs font-medium transition-colors flex items-center gap-1">
+                    <span>${voted ? '✓' : 'Vote'}</span>
+                  </button>
                 ` : `
                   <button onclick="openModal('${item.id}')" class="flex-1 py-2 px-3 rounded-xl bg-soil-800 hover:bg-soil-700 text-stone-300 text-xs font-medium transition-colors border border-white/5">
                     Inspect Concept
