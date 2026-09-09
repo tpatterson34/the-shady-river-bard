@@ -173,7 +173,9 @@
         "AvAjIrk7TbA"
       ],
       "youtube_music_url": "https://music.youtube.com/playlist?list=OLAK5uy_m0XNxuBlIZ5zv4Mrb1S3Nb_RzJ3QFBnpU",
-      "video_playlist_url": "https://www.youtube.com/playlist?list=PLO_tWXIGUXcHGcrGGVmhxgbmjlO4Z7SU2"
+      "video_playlist_url": "https://www.youtube.com/playlist?list=PLO_tWXIGUXcHGcrGGVmhxgbmjlO4Z7SU2",
+      "is_bespoke": true,
+      "custom_url": "https://tpatterson34.github.io/the-fracture/"
     },
     {
       "id": "the-great-inversion",
