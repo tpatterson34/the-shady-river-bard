@@ -244,8 +244,8 @@
               <img id="modal-art" src="" alt="" class="w-full h-full object-cover">
             </div>
             
-            <!-- Quick Streaming Badges -->
-            <div class="mt-4 space-y-2">
+            <!-- Quick Streaming Badges (Released Albums) -->
+            <div id="modal-streaming-container" class="mt-4 space-y-2">
               <a id="modal-yt-btn" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-red-600/90 hover:bg-red-600 text-white font-medium text-xs transition-colors">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 Listen on YouTube Music
@@ -261,6 +261,18 @@
                   Deezer Search
                 </a>
               </div>
+            </div>
+
+            <!-- Vault Actions (Unreleased Albums) -->
+            <div id="modal-vault-container" class="mt-4 space-y-2.5 hidden">
+              <div class="p-3.5 rounded-xl bg-amber-950/40 border border-amber-800/30 text-center">
+                <div class="text-amber-400 font-semibold text-xs uppercase tracking-wider font-mono">Unreleased Concept</div>
+                <p class="text-[11px] text-stone-400 mt-1">This album is in active development in the workshop.</p>
+              </div>
+              <button id="modal-vote-btn" onclick="handleModalVoteClick()" class="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-medium text-xs transition-all flex items-center justify-center gap-2 shadow-md">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                <span id="modal-vote-btn-text">Vote to Release This Album</span>
+              </button>
             </div>
           </div>
 
@@ -637,10 +649,22 @@
       `;
     }
 
+    let currentModalId = null;
+
+    function handleModalVoteClick() {
+      if (!currentModalId) return;
+      const targetId = currentModalId;
+      closeModal();
+      setTimeout(() => openVoteModal(targetId), 250);
+    }
+
     function openModal(id) {
       const allItems = [...catalog.released, ...catalog.vault];
       const item = allItems.find(x => x.id === id);
       if (!item) return;
+
+      currentModalId = item.id;
+      const isReleased = Boolean(item.number);
 
       document.getElementById('modal-title').innerText = item.title;
       document.getElementById('modal-badge').innerText = item.number ? `#${String(item.number).padStart(2, '0')}` : 'VAULT CONCEPT';
@@ -663,19 +687,42 @@
       document.getElementById('modal-genre').innerText = item.genre || 'Concept Folk';
       document.getElementById('modal-track-count').innerText = `${item.track_count || item.tracks?.length || 0} tracks`;
 
-      // Streaming links
-      const ytBtn = document.getElementById('modal-yt-btn');
-      if (item.youtube_url) {
-        ytBtn.href = item.youtube_url;
-        ytBtn.classList.remove('hidden');
-      } else {
-        ytBtn.classList.add('hidden');
-      }
+      // Streaming links vs Vault actions
+      const streamContainer = document.getElementById('modal-streaming-container');
+      const vaultContainer = document.getElementById('modal-vault-container');
 
-      // Spotify & Deezer dynamic search queries
-      const queryStr = encodeURIComponent("The Shady River Bard " + item.title);
-      document.getElementById('modal-spotify-btn').href = `https://open.spotify.com/search/${queryStr}`;
-      document.getElementById('modal-deezer-btn').href = `https://www.deezer.com/search/${queryStr}`;
+      if (isReleased) {
+        if (streamContainer) streamContainer.classList.remove('hidden');
+        if (vaultContainer) vaultContainer.classList.add('hidden');
+
+        const ytBtn = document.getElementById('modal-yt-btn');
+        if (item.youtube_url) {
+          ytBtn.href = item.youtube_url;
+          ytBtn.classList.remove('hidden');
+        } else {
+          ytBtn.classList.add('hidden');
+        }
+
+        const queryStr = encodeURIComponent("The Shady River Bard " + item.title);
+        document.getElementById('modal-spotify-btn').href = `https://open.spotify.com/search/${queryStr}`;
+        document.getElementById('modal-deezer-btn').href = `https://www.deezer.com/search/${queryStr}`;
+      } else {
+        if (streamContainer) streamContainer.classList.add('hidden');
+        if (vaultContainer) vaultContainer.classList.remove('hidden');
+
+        const voted = localStorage.getItem('voted_' + item.id);
+        const voteBtnText = document.getElementById('modal-vote-btn-text');
+        const voteBtn = document.getElementById('modal-vote-btn');
+        if (voteBtnText && voteBtn) {
+          if (voted) {
+            voteBtnText.innerText = "✓ You Voted for this Release";
+            voteBtn.className = "w-full py-2.5 px-4 rounded-xl bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-medium cursor-default flex items-center justify-center gap-2";
+          } else {
+            voteBtnText.innerText = "Vote to Release This Album";
+            voteBtn.className = "w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-medium text-xs transition-all flex items-center justify-center gap-2 shadow-md";
+          }
+        }
+      }
 
       // Novella box
       const novBox = document.getElementById('modal-novella-box');
@@ -713,7 +760,7 @@
               <span class="font-mono text-xs text-brand-500 w-5">${String(idx + 1).padStart(2, '0')}</span>
               <span class="font-medium text-stone-200">${tr}</span>
             </div>
-            ${item.youtube_url ? `
+            ${(isReleased && item.youtube_url) ? `
               <a href="${item.youtube_url}" target="_blank" class="text-xs text-stone-500 hover:text-brand-400 flex items-center gap-1">
                 Listen ↗
               </a>
