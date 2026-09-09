@@ -42,7 +42,8 @@
       "genre": "Contemplative Country Blues",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-01.jpg"
+      "cover_image": "assets/covers/album-01.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/quiet-harvest/1829562339"
     },
     {
       "id": "beyond-the-number",
@@ -120,7 +121,8 @@
         "title": "The Fracture",
         "url": "https://theshadyriverbard.substack.com/s/the-fracture"
       },
-      "cover_image": "assets/covers/album-03.jpg"
+      "cover_image": "assets/covers/album-03.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-fracture/1831568860"
     },
     {
       "id": "the-great-inversion",
@@ -160,7 +162,8 @@
         "title": "The Great Inversion",
         "url": "https://theshadyriverbard.substack.com/s/the-great-inversion"
       },
-      "cover_image": "assets/covers/album-04.jpg"
+      "cover_image": "assets/covers/album-04.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-great-inversion/1830781994"
     },
     {
       "id": "the-poison-we-trust",
@@ -197,7 +200,8 @@
       "genre": "Gritty Political Folk",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-05.jpg"
+      "cover_image": "assets/covers/album-05.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-poison-we-trust/1831430324"
     },
     {
       "id": "a-house-divided",
@@ -234,7 +238,8 @@
       "genre": "Roots Folk",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-06.jpg"
+      "cover_image": "assets/covers/album-06.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/a-house-divided/1831843858"
     },
     {
       "id": "unequal-justice",
@@ -313,7 +318,8 @@
         "title": "The Lucidity Protocol",
         "url": "https://theshadyriverbard.substack.com/s/the-lucidity-protocol"
       },
-      "cover_image": "assets/covers/album-08.png"
+      "cover_image": "assets/covers/album-08.png",
+      "apple_music_url": "https://music.apple.com/us/album/cognitive-inferno/1832521551"
     },
     {
       "id": "the-hammer-and-the-rust",
@@ -389,7 +395,8 @@
       "genre": "Historical Folk Blues",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-10.jpg"
+      "cover_image": "assets/covers/album-10.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-unbroken-chain/1832642969"
     },
     {
       "id": "this-sacred-ground",
@@ -425,7 +432,8 @@
       "genre": "Folk Epic",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-11.jpg"
+      "cover_image": "assets/covers/album-11.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/this-sacred-ground/1833864145"
     },
     {
       "id": "the-balance-sheet-of-outrage",
@@ -463,7 +471,8 @@
       "genre": "Heavy Political Folk",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-12.jpg"
+      "cover_image": "assets/covers/album-12.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-balance-sheet-of-outrage/1835456667"
     },
     {
       "id": "mama-s-boy",
@@ -498,7 +507,8 @@
       "genre": "Personal Narrative Blues",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-13.jpg"
+      "cover_image": "assets/covers/album-13.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/mamas-boy/1837516202"
     },
     {
       "id": "five-digit-fate",
@@ -612,7 +622,9 @@
       "genre": "Anthem / Narrative Folk",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-16.png"
+      "cover_image": "assets/covers/album-16.png",
+      "apple_music_url": "https://music.apple.com/us/album/divide-and-conquer/1841164185",
+      "spotify_url": "https://open.spotify.com/album/10BEGUp2Z2ZCe1LVqOf995"
     },
     {
       "id": "yo-ho-ho-and-a-pocket-full-of-greed",
@@ -649,7 +661,8 @@
       "genre": "Satirical Sea Shanty / Folk",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-17.png"
+      "cover_image": "assets/covers/album-17.png",
+      "apple_music_url": "https://music.apple.com/us/album/yo-ho-ho-and-a-pocket-full-of-greed/1841165890"
     },
     {
       "id": "american-rubble",
@@ -686,7 +699,8 @@
       "genre": "Dark Dystopian Folk",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-18.png"
+      "cover_image": "assets/covers/album-18.png",
+      "apple_music_url": "https://music.apple.com/us/album/american-rubble/1850285702"
     },
     {
       "id": "american-renewal",
@@ -729,7 +743,9 @@
       "genre": "Uplifting Grassroots Folk",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-19.jpg"
+      "cover_image": "assets/covers/album-19.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/american-renewal/1850295412",
+      "spotify_url": "https://open.spotify.com/album/6B4sFQmFRiknGkOvAjfndy"
     },
     {
       "id": "have-yourself-a-shady-little-christmas",
@@ -767,7 +783,9 @@
       "genre": "Social Realist Holiday Carol",
       "release_year": 2025,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-20.jpg"
+      "cover_image": "assets/covers/album-20.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/have-yourself-a-shady-little-christmas/1853172081",
+      "spotify_url": "https://open.spotify.com/album/2cudQgkGh411mQMeMiS1Rt"
     },
     {
       "id": "doomsday-clock",
@@ -804,7 +822,9 @@
       "genre": "Four-Act Concept Rock / Atmospheric",
       "release_year": 2026,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-21.jpg"
+      "cover_image": "assets/covers/album-21.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-doomsday-clock/1868204426",
+      "spotify_url": "https://open.spotify.com/album/1s6pdAQt8rvMcqZ4vwzB4E"
     },
     {
       "id": "the-inner-citadel-a-stoic-s-songbook",
@@ -842,7 +862,9 @@
       "genre": "Acoustic Meditations",
       "release_year": 2026,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-22.jpg"
+      "cover_image": "assets/covers/album-22.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-inner-citadel-a-stoics-songbook/1873866589",
+      "spotify_url": "https://open.spotify.com/album/5zTMus25oirhlS4rg4vVv2"
     },
     {
       "id": "the-curtains-and-the-canned-goods",
@@ -881,7 +903,9 @@
       "genre": "Sonic Documentary / Country Blues",
       "release_year": 2026,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-23.jpg"
+      "cover_image": "assets/covers/album-23.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-curtains-and-the-canned-goods/1895192841",
+      "spotify_url": "https://open.spotify.com/album/0mcHwnGe7Xo8dxF2KztPO7"
     },
     {
       "id": "go-bake-some-apples",
@@ -917,7 +941,9 @@
       "genre": "Dark Folk Satire",
       "release_year": 2026,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-24.jpg"
+      "cover_image": "assets/covers/album-24.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/go-bake-some-apples/6774843186",
+      "spotify_url": "https://open.spotify.com/album/6dGYLX0ezJADr8QibvM4mq"
     },
     {
       "id": "a-dog-s-life-the-tao-of-the-tail",
@@ -956,7 +982,9 @@
       "genre": "Acoustic Folk / Homestead Philosophy",
       "release_year": 2026,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-25.jpg"
+      "cover_image": "assets/covers/album-25.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/a-dogs-life-the-tao-of-the-tail/6800401143",
+      "spotify_url": "https://open.spotify.com/album/309oIc26KNKPNZTmTObwEn"
     },
     {
       "id": "the-hollow-herd",
@@ -995,7 +1023,9 @@
       "genre": "Forensic Sonic Audit / Western Blues",
       "release_year": 2026,
       "companion_novella": null,
-      "cover_image": "assets/covers/album-26.jpg"
+      "cover_image": "assets/covers/album-26.jpg",
+      "apple_music_url": "https://music.apple.com/us/album/the-hollow-herd/6804488381",
+      "spotify_url": "https://open.spotify.com/album/6HLUZhKWtm9llm6iUncqhh"
     }
   ],
   "vault": [

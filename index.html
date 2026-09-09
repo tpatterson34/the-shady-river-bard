@@ -167,6 +167,14 @@
           Apple Music
         </a>
         <span class="text-stone-700" aria-hidden="true">|</span>
+        <a href="https://open.spotify.com/artist/2QtTWiosF5IrrAib5b7arZ" target="_blank" class="hover:text-brand-400 transition-colors font-medium">
+          Spotify
+        </a>
+        <span class="text-stone-700" aria-hidden="true">|</span>
+        <a href="https://music.amazon.com/search/The+Shady+River+Bard" target="_blank" class="hover:text-brand-400 transition-colors font-medium">
+          Amazon Music
+        </a>
+        <span class="text-stone-700" aria-hidden="true">|</span>
         <a href="https://www.youtube.com/@TheShadyRiverBard" target="_blank" class="hover:text-brand-400 transition-colors font-medium">
           YouTube
         </a>
@@ -353,20 +361,44 @@
             
             <!-- Quick Streaming Badges (Released Albums) -->
             <div id="modal-streaming-container" class="mt-4 space-y-2">
-              <a id="modal-yt-btn" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-red-600/90 hover:bg-red-600 text-white font-medium text-xs transition-colors">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span class="text-[11px] font-mono uppercase tracking-wider text-stone-300 block font-semibold">Stream Album</span>
+              
+              <!-- Primary Streamers -->
+              <a id="modal-yt-btn" href="#" target="_blank" aria-label="Listen on YouTube Music (opens in new tab)" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-medium text-xs transition-colors shadow focus-visible:ring-2 focus-visible:ring-white">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 Listen on YouTube Music
               </a>
-              <a id="modal-apple-btn" href="https://music.apple.com/us/artist/the-shady-river-bard/1829561760" target="_blank" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-pink-600/20 border border-pink-500/30 hover:bg-pink-600/30 text-pink-300 font-medium text-xs transition-colors">
+
+              <a id="modal-apple-btn" href="#" target="_blank" aria-label="Listen on Apple Music (opens in new tab)" class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-medium text-xs transition-colors shadow focus-visible:ring-2 focus-visible:ring-white">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-.9.04-2 .6-2.63 1.34-.56.64-.99 1.69-.87 2.73 1.01.08 1.99-.48 2.58-1.2"/></svg>
                 Listen on Apple Music
               </a>
+
               <div class="grid grid-cols-2 gap-2 text-center text-xs">
-                <a id="modal-spotify-btn" href="#" target="_blank" class="py-2 px-3 rounded-lg bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 hover:bg-emerald-900/40 transition-colors">
-                  Spotify Search
+                <a id="modal-spotify-btn" href="#" target="_blank" aria-label="Listen on Spotify (opens in new tab)" class="py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-medium transition-colors flex items-center justify-center gap-1.5 shadow focus-visible:ring-2 focus-visible:ring-white">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                  Spotify
                 </a>
-                <a id="modal-deezer-btn" href="#" target="_blank" class="py-2 px-3 rounded-lg bg-amber-950/40 border border-amber-800/40 text-amber-400 hover:bg-amber-900/40 transition-colors">
-                  Deezer Search
+                <a id="modal-amazon-btn" href="#" target="_blank" aria-label="Listen on Amazon Music (opens in new tab)" class="py-2.5 px-3 rounded-xl bg-sky-700 hover:bg-sky-600 text-white font-medium transition-colors flex items-center justify-center gap-1.5 shadow focus-visible:ring-2 focus-visible:ring-white">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.958 10.09c0 1.25-.03 2.34-.92 3.32-.67.74-1.63 1.15-2.56 1.15-1.38 0-2.19-.94-2.19-2.33 0-2.71 2.45-3.2 4.97-3.2v.22c.7 0 .7.84.7.84zm3.03 5.43c-.23.18-.57.19-.78-.05-.82-.92-.96-1.36-1.4-2.02-1.34 1.6-2.5 2.1-4.27 2.1-2.22 0-3.93-1.42-3.93-3.97 0-1.99 1.12-3.37 2.76-4.04 1.4-.57 3.36-.67 4.87-.85v-.33c0-.64.05-1.42-.35-1.96-.38-.51-1.09-.72-1.74-.72-1.18 0-2.24.58-2.51 1.8-.05.25-.26.47-.52.47l-2.45-.26c-.24-.05-.46-.26-.39-.56C7.03 2.14 9.87 1.2 12.3 1.2c1.23 0 2.84.33 3.82 1.28 1.25 1.18 1.15 2.8 1.15 4.54v3.83c0 1.17.48 1.68.95 2.32.19.26.16.59-.06.77l-1.18 1.58zM21.6 18.25c-5.91 3.53-13.43 3.65-18.42.27-.47-.32-.09-.75.43-.51 4.52 2.06 11.51 2.22 17.38-.28.81-.35 1.28.2.61.52zm1.61 1.76c-.46.59-1.53.28-2.38-.16-.86-.44-2.01-1.36-1.55-1.95.46-.59 2.08-.2 2.94.24.85.45 1.45 1.28.99 1.87z"/></svg>
+                  Amazon Music
                 </a>
+              </div>
+
+              <!-- Secondary Streamers: TIDAL, Pandora, iHeart -->
+              <div class="pt-2 border-t border-white/5">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-stone-400 block mb-1.5">Also Distributed To:</span>
+                <div class="grid grid-cols-3 gap-1.5 text-center text-[11px]">
+                  <a id="modal-tidal-btn" href="#" target="_blank" aria-label="Listen on TIDAL (opens in new tab)" class="py-1.5 px-2 rounded-lg bg-soil-800 hover:bg-soil-700 text-stone-200 hover:text-white border border-white/10 transition-colors">
+                    TIDAL ↗
+                  </a>
+                  <a id="modal-pandora-btn" href="#" target="_blank" aria-label="Listen on Pandora (opens in new tab)" class="py-1.5 px-2 rounded-lg bg-soil-800 hover:bg-soil-700 text-stone-200 hover:text-white border border-white/10 transition-colors">
+                    Pandora ↗
+                  </a>
+                  <a id="modal-iheart-btn" href="#" target="_blank" aria-label="Listen on iHeartRadio (opens in new tab)" class="py-1.5 px-2 rounded-lg bg-soil-800 hover:bg-soil-700 text-stone-200 hover:text-white border border-white/10 transition-colors">
+                    iHeart ↗
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -545,7 +577,9 @@
     <div class="flex flex-wrap items-center justify-center gap-6 pt-2 text-stone-300">
       <a href="https://theshadyriverbard.substack.com" target="_blank" class="hover:text-brand-400 transition-colors underline-target">Substack</a>
       <a href="https://music.apple.com/us/artist/the-shady-river-bard/1829561760" target="_blank" class="hover:text-brand-400 transition-colors underline-target">Apple Music</a>
-      <a href="https://www.youtube.com/@TheShadyRiverBard" target="_blank" class="hover:text-brand-400 transition-colors underline-target">YouTube Channel</a>
+      <a href="https://open.spotify.com/artist/2QtTWiosF5IrrAib5b7arZ" target="_blank" class="hover:text-brand-400 transition-colors underline-target">Spotify</a>
+      <a href="https://music.amazon.com/search/The+Shady+River+Bard" target="_blank" class="hover:text-brand-400 transition-colors underline-target">Amazon Music</a>
+      <a href="https://www.youtube.com/@TheShadyRiverBard" target="_blank" class="hover:text-brand-400 transition-colors underline-target">YouTube</a>
       <a href="https://www.facebook.com/profile.php?id=61578707414516" target="_blank" class="hover:text-brand-400 transition-colors underline-target">Facebook Community</a>
     </div>
     <div class="pt-4 border-t border-white/5 flex items-center justify-center gap-4 text-[11px] text-stone-500">
@@ -872,17 +906,28 @@
         if (streamContainer) streamContainer.classList.remove('hidden');
         if (vaultContainer) vaultContainer.classList.add('hidden');
 
-        const ytBtn = document.getElementById('modal-yt-btn');
-        if (item.youtube_url) {
-          ytBtn.href = item.youtube_url;
-          ytBtn.classList.remove('hidden');
-        } else {
-          ytBtn.classList.add('hidden');
-        }
-
         const queryStr = encodeURIComponent("The Shady River Bard " + item.title);
-        document.getElementById('modal-spotify-btn').href = `https://open.spotify.com/search/${queryStr}`;
-        document.getElementById('modal-deezer-btn').href = `https://www.deezer.com/search/${queryStr}`;
+
+        // 1. YouTube Music (direct album playlist URL)
+        const ytBtn = document.getElementById('modal-yt-btn');
+        ytBtn.href = item.youtube_url || `https://music.youtube.com/search?q=${queryStr}`;
+
+        // 2. Apple Music (direct album URL if known, else artist profile / search)
+        const appleBtn = document.getElementById('modal-apple-btn');
+        appleBtn.href = item.apple_music_url || `https://music.apple.com/us/artist/the-shady-river-bard/1829561760`;
+
+        // 3. Spotify (direct album URL if known, else search)
+        const spotifyBtn = document.getElementById('modal-spotify-btn');
+        spotifyBtn.href = item.spotify_url || `https://open.spotify.com/search/${queryStr}`;
+
+        // 4. Amazon Music (direct search query for album)
+        const amazonBtn = document.getElementById('modal-amazon-btn');
+        amazonBtn.href = `https://music.amazon.com/search/${queryStr}?filter=IsLibrary%7Cfalse&sc=none`;
+
+        // Secondary Streamers: TIDAL, Pandora, iHeartRadio
+        document.getElementById('modal-tidal-btn').href = `https://listen.tidal.com/search?q=${queryStr}`;
+        document.getElementById('modal-pandora-btn').href = `https://www.pandora.com/search/${queryStr}/all`;
+        document.getElementById('modal-iheart-btn').href = `https://www.iheart.com/search/?q=${queryStr}`;
       } else {
         if (streamContainer) streamContainer.classList.add('hidden');
         if (vaultContainer) vaultContainer.classList.remove('hidden');
